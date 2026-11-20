@@ -1,0 +1,94 @@
+/* Jacket Market: motion layer 2 (loads after motion.css) */
+@property --pn{syntax:'<integer>';inherits:false;initial-value:0}
+@media(prefers-reduced-motion:no-preference){
+html{scroll-behavior:auto}
+/* ---------- preloader (first visit in a session) ---------- */
+html.pre::after{content:"JACKET MARKET™\A " counter(pn) "%";counter-reset:pn var(--pn);white-space:pre;position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;text-align:center;background:#1c2f40;color:#fff;font-family:var(--f1,Anton,sans-serif);font-size:clamp(30px,6vw,84px);line-height:1.15;letter-spacing:.05em;pointer-events:none;animation:preA 1.55s cubic-bezier(.7,0,.2,1) forwards}
+html.pre::before{content:"";position:fixed;left:0;bottom:0;height:3px;width:100%;background:#dbe6ef;z-index:301;transform-origin:left;pointer-events:none;animation:preB 1.55s cubic-bezier(.7,0,.2,1) forwards}
+@keyframes preA{0%{--pn:0;clip-path:inset(0)}72%{--pn:100;clip-path:inset(0)}99%{--pn:100;clip-path:inset(0 0 100% 0);visibility:visible}100%{--pn:100;clip-path:inset(0 0 100% 0);visibility:hidden}}
+@keyframes preB{0%{transform:scaleX(0)}72%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0;visibility:hidden}}
+html.pre.js-m .hl>div{animation-delay:1.3s}
+html.pre.js-m .hl>div:nth-child(2){animation-delay:1.55s}
+html.pre.js-m .hr>:nth-child(1){animation-delay:1.6s}
+html.pre.js-m .hr>:nth-child(2){animation-delay:1.7s}
+html.pre.js-m .hr>:nth-child(3){animation-delay:1.8s}
+html.pre.js-m .hero .stage{animation-delay:1.15s}
+html.pre .w>i{transition-delay:calc(var(--wi,0)*60ms + 1.3s)}
+html.pre.js-m2 header.top .logo,html.pre.js-m2 header.top nav a,html.pre.js-m2 header.top .acct>*{animation-delay:calc(var(--k,0)*70ms + 1.45s)}
+
+/* ---------- double page curtain ---------- */
+.cv2{position:fixed;inset:0;z-index:199;pointer-events:none;background:#34546e;clip-path:inset(0 0 100% 0);transition:clip-path .45s cubic-bezier(.7,0,.2,1);animation:curIn .95s cubic-bezier(.7,0,.2,1) .17s both}
+body.out .cv2{animation:none;clip-path:inset(0)}
+body.out::before{transition-duration:.42s;transition-delay:.09s}
+
+/* ---------- header entrance + nav underline ---------- */
+.js-m2 header.top .logo,.js-m2 header.top nav a,.js-m2 header.top .acct>*{animation:m2d .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k,0)*70ms + .3s)}
+@keyframes m2d{from{opacity:0;translate:0 -16px}}
+header.top nav a:nth-child(2),header.top .acct>:nth-child(1){--k:1}
+header.top nav a:nth-child(3),header.top .acct>:nth-child(2){--k:2}
+header.top nav a:nth-child(4),header.top .acct>:nth-child(3){--k:3}
+header.top .acct>:nth-child(4){--k:4}
+header.top nav a{position:relative}
+header.top nav a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:currentColor;scale:0 1;transform-origin:right;transition:scale .5s cubic-bezier(.2,.8,.2,1)}
+header.top nav a:hover::after,header.top nav a[aria-current]::after{scale:1 1;transform-origin:left}
+header.top .logo{transition:letter-spacing .6s cubic-bezier(.2,.8,.2,1)}
+header.top .logo:hover{letter-spacing:.05em}
+
+/* ---------- buttons ---------- */
+.btn{position:relative;transition:transform .25s,background .25s,scale .25s cubic-bezier(.2,.8,.2,1)}
+.btn::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 30%,rgba(110,150,185,.38) 50%,transparent 70%);translate:-130% 0;transition:translate .8s cubic-bezier(.2,.8,.2,1)}
+.btn:hover::before{translate:130% 0}
+.btn:active,.hex:active,.qty button:active,.fb:active{scale:.94}
+.hex svg{transition:scale .5s cubic-bezier(.2,.8,.2,1),rotate .6s cubic-bezier(.2,.8,.2,1)}
+.hex:hover svg{scale:1.1}
+.hex svg polygon{transition:stroke-width .3s}
+.hex:hover svg polygon{stroke-width:2}
+.qty button,.cp-rm,.spec dd button,.dotc,.nxc,.r-thumbs button{transition:scale .3s cubic-bezier(.2,.8,.2,1),opacity .3s,background .3s,color .3s,translate .3s}
+.dotc:hover,.r-thumbs button:hover{scale:1.2}
+.nxc:hover{translate:0 -5px}
+.lnk{transition:translate .4s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.lnk:hover{translate:6px 0}
+
+/* ---------- cards: 3D tilt, rise, image parallax ---------- */
+.card:not(.feat) .pic{transform:rotateX(var(--tx,0deg)) rotateY(var(--ty,0deg));transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.card:not(.feat):hover .pic{transition-duration:.18s}
+.card .meta{transition:translate .5s cubic-bezier(.2,.8,.2,1)}
+.card:hover .meta{translate:0 -2px}
+.card .meta b{transition:letter-spacing .5s cubic-bezier(.2,.8,.2,1)}
+.card:hover .meta b{letter-spacing:.11em}
+.card .meta .pr{transition:translate .5s cubic-bezier(.2,.8,.2,1)}
+.card:hover .meta .pr{translate:6px 0}
+
+/* ---------- ambient motion ---------- */
+.js-m2 .jk.in{animation:m2kb 11s ease-in-out infinite alternate}
+@keyframes m2kb{to{scale:1.035}}
+.shadow{animation:m2sh 6s ease-in-out infinite}
+@keyframes m2sh{50%{scale:.9 1;opacity:.75}}
+.fm img{animation:m2fm 6s ease-in-out infinite alternate}
+.fm.m2 img{animation-delay:-3s;animation-duration:7s}
+@keyframes m2fm{to{translate:0 -10px;rotate:.8deg}}
+.jf-n a,.jf-soc a{transition:translate .45s cubic-bezier(.2,.8,.2,1),opacity .3s,scale .3s}
+.jf-n a:hover{translate:10px 0}
+.jf-soc a:hover{translate:0 -4px;scale:1.12}
+.c-sign{animation:m2sg 8s ease-in-out infinite alternate}
+@keyframes m2sg{to{translate:0 -8px;rotate:-1deg}}
+.r-card{transition:filter .5s,scale .6s cubic-bezier(.2,.8,.2,1)}
+.r-card.on{scale:1.04}
+.pd .stage img{transition-timing-function:cubic-bezier(.2,.8,.2,1)}
+
+/* ---------- snow canvas ---------- */
+canvas.snow{position:fixed;inset:0;width:100%;height:100%;z-index:89;pointer-events:none;opacity:.8}
+
+/* ---------- misc ---------- */
+.toast,.h-t{transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+#cartN{transition:scale .3s cubic-bezier(.3,1.6,.5,1)}
+.cp-i{transition:opacity .4s,translate .5s cubic-bezier(.2,.8,.2,1)}
+.cp-i:hover{translate:6px 0}
+.cp-img img,.ab-ban img,.abm{transition:scale 1.2s cubic-bezier(.2,.8,.2,1)}
+.cp-i:hover .cp-img img{scale:1.06}
+.bar>i,.cb,#cb{transition:width .9s cubic-bezier(.2,.8,.2,1)}
+input,textarea,select{transition:border-color .35s,box-shadow .45s cubic-bezier(.2,.8,.2,1),background .35s}
+input:focus,textarea:focus,select:focus{box-shadow:0 0 0 4px rgba(219,230,239,.28)}
+summary i{transition:rotate .5s cubic-bezier(.2,.8,.2,1)}
+details[open]>summary i{rotate:90deg}
+}
