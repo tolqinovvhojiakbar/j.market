@@ -1,0 +1,36 @@
+/* Jacket Market: about page */
+.ab{position:relative;z-index:1}
+.ab-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.7fr);gap:clamp(24px,5vw,90px);align-items:center;min-height:min(78vh,720px)}
+.ab-tag{margin:0 0 18px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.ab-hero h1{font-size:clamp(56px,9vw,150px);margin-bottom:26px}
+.ab-hero .lead{max-width:48ch;font-size:12px;margin-bottom:30px}
+.ab-fig{margin:0;position:relative;justify-self:end;width:min(100%,460px)}
+.ab-fig::before{content:"";position:absolute;inset:8% -6% -4% 6%;background:radial-gradient(closest-side,var(--glow),transparent);filter:blur(36px);z-index:-1}
+.ab-pic{--ch:34px;position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--ice);clip-path:polygon(0 0,calc(100% - var(--ch)) 0,100% var(--ch),100% 100%,var(--ch) 100%,0 calc(100% - var(--ch)))}
+.ab-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.ab-fig:hover img{transform:scale(1.04)}
+.ab-cap{position:absolute;left:14px;top:14px;padding:6px 10px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:rgba(14,28,41,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+
+.ab .statement{font-size:clamp(30px,4.6vw,76px);max-width:20em;margin:clamp(56px,12vh,130px) 0}
+.ab .specs{grid-template-columns:repeat(3,1fr)}
+.ab .specs b{font-size:clamp(56px,8vw,128px)}
+
+.ab-pr{margin-top:clamp(64px,12vh,140px)}
+.ab-pr>h2{margin-bottom:clamp(20px,3vw,36px)}
+.ab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.8vw,26px)}
+.ab-p{--ch:22px;position:relative;padding:clamp(22px,2.4vw,34px);min-height:260px;display:flex;flex-direction:column;background:rgba(14,28,41,.3);box-shadow:inset 0 0 0 1px var(--line);transition:background .35s,transform .35s cubic-bezier(.2,.8,.2,1);clip-path:polygon(0 0,calc(100% - var(--ch)) 0,100% var(--ch),100% 100%,var(--ch) 100%,0 calc(100% - var(--ch)))}
+.ab-p:hover{background:rgba(14,28,41,.5)}
+.ab-n{font-size:10px;letter-spacing:.1em;color:var(--mute);margin-bottom:auto;padding-bottom:40px}
+.ab-p h3{font-size:clamp(28px,2.8vw,42px);margin-bottom:12px}
+.ab-p p{margin:0;font-size:11px;line-height:1.8;letter-spacing:.04em;text-transform:uppercase;color:var(--mute)}
+
+.ab-ban{--ch:34px;position:relative;margin-top:clamp(64px,12vh,140px);min-height:clamp(320px,52vh,520px);display:flex;align-items:flex-end;overflow:hidden;background:var(--night)}
+.ab-ban img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+.ab-ban::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 20%,rgba(14,28,41,.85))}
+.ab-bt{position:relative;z-index:1;padding:clamp(20px,3vw,44px)}
+.ab-bt h2{margin:0;font-size:clamp(34px,5.4vw,88px)}.ab-bt .mono{color:var(--w)}
+
+.ab-cta{margin-top:clamp(64px,12vh,140px);display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:clamp(28px,5vw,56px)}
+.ab-cta h2{font-size:clamp(48px,8vw,128px);margin:0}
+
+@media(max-width:960px){.ab-hero{grid-template-columns:1fr;min-height:0}.ab-fig{justify-self:start;width:min(100%,380px)}.ab-grid{grid-template-columns:1fr}.ab-p{min-height:0}.ab-n{padding-bottom:24px}}

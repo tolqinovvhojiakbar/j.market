@@ -1,0 +1,8 @@
+/* Jacket Market: full-page photo backgrounds for About, Support and Contacts */
+body[data-page="about"]{background:linear-gradient(rgba(14,28,41,.38),rgba(14,28,41,.62)),url("../images/about-bg.webp") 50% 50%/cover no-repeat fixed #0e1c29}
+body[data-page="support"]{background:linear-gradient(rgba(14,28,41,.45),rgba(14,28,41,.7)),url("../images/support-bg.webp") 50% 40%/cover no-repeat fixed #0e1c29}
+body[data-page="contacts"]{background:linear-gradient(rgba(14,28,41,.42),rgba(14,28,41,.68)),url("../images/contacts-bg.webp") 50% 55%/cover no-repeat fixed #0e1c29}
+@media(max-width:700px){body[data-page="contacts"]{background-position:0 0,48% 55%}body[data-page="about"]{background-position:0 0,62% 50%}body[data-page="support"]{background-position:0 0,58% 40%}}
+/* let the photo show through the page frame and drop the default mountain art */
+body[data-page="about"] .frame,body[data-page="support"] .frame,body[data-page="contacts"] .frame{background:none}
+body[data-page="about"] .abm,body[data-page="support"] .abm,body[data-page="contacts"] .abm{display:none}

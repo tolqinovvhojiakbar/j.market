@@ -1,0 +1,44 @@
+/* ---- Contacts (form fields come from account.css) ---- */
+.ct-head{display:grid;grid-template-columns:1fr minmax(0,420px);align-items:end;gap:24px 48px;margin-bottom:clamp(32px,6vh,72px)}
+.ct-head h1{font-size:clamp(64px,10vw,170px);line-height:.88}
+.ct-lead{margin:0 0 .6em;font-size:14px;line-height:1.7;color:#dbe6ef}
+.ct-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,2.6vw,40px);align-items:start}
+.ct-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.ct-it{position:relative}
+.ct-row{display:grid;grid-template-columns:1fr auto;grid-template-areas:"k go" "v go";align-items:end;gap:6px 18px;padding:22px clamp(18px,2.2vw,30px);padding-right:clamp(18px,2.2vw,30px);text-decoration:none;color:var(--w);background:rgba(14,28,41,.42);box-shadow:inset 0 0 0 1px rgba(243,248,252,.16);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px));transition:background .3s,box-shadow .3s}
+.ct-row:hover{background:rgba(14,28,41,.62);box-shadow:inset 0 0 0 1px rgba(243,248,252,.34)}
+.ct-row:focus-visible{outline:2px solid #bfe0ff;outline-offset:3px}
+.ct-k{grid-area:k;font-size:12px;color:var(--mute)}
+.ct-v{grid-area:v;font-family:var(--f1);font-size:clamp(22px,2.2vw,36px);line-height:1.02;text-transform:uppercase;overflow-wrap:anywhere}
+.ct-go{grid-area:go;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(243,248,252,.3);transition:transform .45s cubic-bezier(.2,.8,.2,1),background .25s,color .25s}
+.ct-go svg{width:18px;height:18px}
+.ct-row:hover .ct-go{background:var(--w);color:var(--ink);transform:rotate(45deg)}
+.ct-copy{position:absolute;right:calc(clamp(18px,2.2vw,30px) + 56px);top:50%;transform:translateY(-50%);z-index:1;padding:8px 12px;border-radius:999px;font-size:12px;color:#dbe6ef;background:rgba(255,255,255,.08);transition:background .2s,color .2s}
+.ct-copy:hover{background:var(--w);color:var(--ink)}
+.ct-copy:focus-visible{outline:2px solid #bfe0ff;outline-offset:2px}
+.ct-note{margin:16px 4px 0;font-size:12px;color:var(--mute)}
+
+.ct-card{padding:clamp(24px,3.2vw,48px);background:rgba(14,28,41,.5);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:inset 0 0 0 1px rgba(243,248,252,.16);clip-path:polygon(0 0,calc(100% - 36px) 0,100% 36px,100% 100%,36px 100%,0 calc(100% - 36px))}
+.ct-card h2{font-size:clamp(30px,3vw,46px);margin:0 0 24px}
+.ct-card form{max-width:none;gap:14px}
+.ct-topics{border:0;padding:0;margin:0 0 4px}
+.ct-topics legend{padding:0;margin:0 0 10px;font-size:13px;color:var(--mute)}
+.ct-topics>div{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:block;position:relative;font-size:13px;letter-spacing:0;text-transform:none;color:#dbe6ef;cursor:pointer}
+.chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.chip span{display:block;padding:10px 16px;border-radius:999px;border:1px solid rgba(243,248,252,.26);background:rgba(255,255,255,.05);transition:background .2s,color .2s,border-color .2s}
+.chip:hover span{border-color:rgba(243,248,252,.5)}
+.chip input:checked+span{background:var(--w);color:var(--ink);border-color:var(--w)}
+.chip input:focus-visible+span{outline:2px solid #bfe0ff;outline-offset:2px}
+.fld textarea{display:block;width:100%;min-height:150px;resize:vertical;padding:28px 16px 14px;border:1px solid rgba(243,248,252,.22);border-radius:14px;background:rgba(255,255,255,.06);font-size:15px;line-height:1.5;transition:border-color .25s,box-shadow .25s,background .25s}
+.fld textarea:focus{border-color:#d3e1ee;background:rgba(255,255,255,.09);box-shadow:0 0 0 4px rgba(191,224,255,.16)}
+.fld textarea:focus+label,.fld textarea:not(:placeholder-shown)+label{top:10px;font-size:11px}
+.fld.bad textarea{border-color:#ffb4a8}
+.cnt{display:block;margin:6px 4px 0;text-align:right;font-size:11px;color:var(--mute)}
+
+@media(max-width:900px){
+.ct-head{grid-template-columns:1fr}.ct-head h1{font-size:clamp(60px,19vw,110px)}
+.ct-grid{grid-template-columns:1fr}
+.ct-copy{position:static;transform:none;margin:8px 0 0 4px}
+.ct-v{font-size:clamp(17px,5.2vw,26px)}
+}

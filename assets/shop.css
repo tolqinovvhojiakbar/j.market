@@ -1,0 +1,58 @@
+/* New Collection page */
+.shop{background:rgba(104,132,156,.62);border-radius:10px;padding:clamp(18px,2.6vw,38px);box-shadow:inset 0 0 0 1px rgba(243,248,252,.14)}
+.sh{display:grid;grid-template-columns:1.25fr 1fr 1fr auto;gap:clamp(16px,3vw,48px);align-items:start;margin-bottom:clamp(22px,3vw,40px)}
+.sh h1{margin:0;font-size:clamp(40px,5.4vw,92px);line-height:.92;text-transform:uppercase;color:#fff}
+.sh ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);line-height:1.6}
+.sh .ct{color:#dbe6ef}
+.fb{justify-self:end;background:#eef4f9;color:var(--ink);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:9px 20px;border-radius:999px;transition:background .2s}
+.fb:hover,.fb[aria-expanded=true]{background:#fff}
+.fc{display:flex;flex-wrap:wrap;gap:10px;margin:-8px 0 26px;justify-content:flex-end}
+.fc[hidden]{display:none}
+.fc button{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding:7px 14px;border:1px solid var(--line);border-radius:999px}
+.fc button[aria-pressed=true]{color:var(--ink);background:#eef4f9;border-color:#eef4f9}
+.shop .grid{grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.5vw,22px) clamp(12px,1.5vw,22px);align-items:start}
+.shop .card[hidden]{display:none!important}
+.shop .card .pic{--ch:24px;aspect-ratio:3/4.3;background:#b8cddd}
+.shop .card .pic img{object-position:50% 20%}
+.shop .card .meta{padding:12px 0 6px;gap:4px}
+.shop .card .meta b{color:#fff;font-weight:500}
+.shop .card .meta small.pr{color:#dbe6ef}
+.shop .card .meta s{color:var(--mute);margin-left:8px}
+/* featured Aurora */
+.shop .card.feat{grid-column:span 2;grid-row:auto}
+.shop .card.feat{display:flex;align-self:stretch}
+.shop .card.feat .pic{flex:1;aspect-ratio:auto;height:auto;min-height:0;background:linear-gradient(135deg,#243c52,#3d5b75);overflow:hidden}
+.shop .card.feat .pic img{position:absolute;inset:0 auto 0 0;width:58%;height:100%;object-fit:cover;object-position:50% 38%;clip-path:none}
+.shop .card.feat .ft{position:absolute;left:62%;right:6%;top:9%;z-index:2}
+.shop .card.feat .ft h3{font-size:clamp(26px,3vw,50px);margin:0 0 20px;line-height:.95;color:#fff;text-transform:uppercase}
+.shop .card.feat .ad{display:flex;align-items:center;gap:12px}
+.shop .card.feat .hx{width:clamp(34px,3.2vw,48px);height:clamp(34px,3.2vw,48px);display:block;color:#fff;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.shop .card.feat:hover .hx{transform:rotate(45deg)}
+.shop .card.feat .price{font-size:clamp(16px,1.5vw,22px);margin:2px 0 0}
+.tag{position:absolute;pointer-events:none}
+.shop .card.feat .tag{right:-4%;bottom:-2%;width:52%;opacity:.9}
+.tag svg{width:100%;height:auto}
+.shop .card.soon .pic{background:linear-gradient(135deg,rgba(36,60,82,.9),rgba(61,91,117,.9));display:grid;place-items:center;overflow:hidden;aspect-ratio:3/4.3}
+.shop .card.soon .tag{inset:auto -20% -4% -20%;opacity:.45}
+.shop .card.soon .mono{position:relative;text-align:center;color:#dbe6ef;line-height:2}
+@media(max-width:1100px){.sh{grid-template-columns:1fr auto}.sh .tg,.sh .ct{grid-row:2}.shop .grid{grid-template-columns:repeat(3,1fr)}.shop .card.feat{grid-column:1/-1}.shop .card.feat .pic{min-height:420px}}
+@media(max-width:620px){.shop{padding:16px}.sh{grid-template-columns:1fr}.fb{justify-self:start}.shop .grid{grid-template-columns:repeat(2,1fr)}.shop .card.feat .pic{min-height:380px}.shop .card.feat .ft{left:62%;right:4%}.shop .card.feat .ft h3{font-size:24px}}
+/* on the home page the panel sits between full-bleed sections */
+.h-shop{padding:clamp(40px,9vh,110px) var(--px)}
+.h-shop .shop{background:rgba(96,124,148,.7)}
+
+/* featured Aurora — poster style: full-bleed photo, text on the wall, bold white tag */
+.shop .card.feat .pic{background:#2f475e;container-type:inline-size}
+.shop .card.feat .pic img{inset:0;width:100%;height:100%;object-fit:cover;object-position:0% 22%;filter:saturate(.9) contrast(1.03)}
+.shop .card.feat .pic::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 55%,rgba(36,60,82,.35))}
+.shop .card.feat .ft{left:70%;right:3%;top:22%}
+.shop .card.feat .ft h3{font-size:max(22px,7.6cqw);margin:0 0 4.5cqw;white-space:nowrap}
+.shop .card.feat .ft h3 sup{font-size:.36em;vertical-align:top;position:relative;top:.15em;margin-left:.08em}
+.shop .card.feat .ad{gap:2cqw}
+.shop .card.feat .hx{width:max(34px,9cqw);height:max(34px,9cqw);flex:none;opacity:.85}
+.shop .card.feat .ad .mono{font-size:max(7px,1.9cqw);letter-spacing:.12em;opacity:.8;white-space:nowrap}
+.shop .card.feat .price{font-size:max(12px,3.2cqw);letter-spacing:.06em}
+.shop .card.feat .tag{right:1%;bottom:1%;width:47%;opacity:.95;z-index:2}
+.shop .card.feat .tag svg{overflow:visible}
+@media(max-width:1100px){.shop .card.feat .pic img{object-position:0% 18%}.shop .card.feat .ft{left:66%;top:18%}}
+@media(max-width:620px){.shop .card.feat .ft{left:6%;right:auto;top:5%}.shop .card.feat .ft h3{font-size:30px;margin-bottom:12px}.shop .card.feat .hx{width:38px;height:38px}.shop .card.feat .ad .mono{font-size:8px}.shop .card.feat .price{font-size:14px}.shop .card.feat .tag{width:52%}}

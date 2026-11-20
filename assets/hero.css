@@ -1,0 +1,109 @@
+/* Arctic 01 hero — photo blended into a muted steel-blue field */
+body[data-page=home] .frame{background:
+ radial-gradient(34% 62% at 50% 46%,#a5b8c4 0%,#9aafbe 50%,transparent 100%),
+ linear-gradient(100deg,#566f87 0%,#7a93a7 34%,#879fb1 58%,#5d768d 100%)}
+body[data-page=home] header.top::before{background:rgba(96,120,140,.3)}
+.hz.mt{display:none}
+.hz.sp{left:12%;right:8%;top:5%;bottom:auto;height:90%;transform:none;opacity:.92;z-index:2}
+.hz.sp svg{height:100%;width:100%}
+.hl h1{font-size:clamp(46px,6.2vw,108px);line-height:.9;letter-spacing:-.005em;text-shadow:0 2px 24px rgba(40,60,80,.25)}
+.hl h1 .tone{background:none;-webkit-text-fill-color:#fff;color:#fff}
+.spec dd button{color:#d6e2ec}
+.buy .price{font-family:var(--f1);font-size:clamp(24px,2.3vw,34px);letter-spacing:.02em}
+/* centre stage: tall crop of the model, feathered into the background */
+.stage{grid-column:1/-1;position:absolute;top:0;bottom:0;left:50%;width:min(62vw,860px);transform:translateX(-50%);perspective:none;z-index:1;min-height:0}
+.stage::before{display:none}
+.fl{animation:none;transform:translate3d(calc(var(--ry,0)*-1.4px),calc(var(--rx,0)*-1px),0)}
+.jk{position:absolute;left:50%;top:3%;height:150%;width:auto;max-width:none;aspect-ratio:860/1068;clip-path:none;
+ transform:translateX(-50%) scale(1.04);filter:brightness(.84) saturate(.82) contrast(1.06);
+ -webkit-mask-image:radial-gradient(ellipse 42% 62% at 50% 53%,#000 64%,transparent 100%);mask-image:radial-gradient(ellipse 42% 62% at 50% 53%,#000 64%,transparent 100%);
+ transition:opacity .9s,transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.jk.in{opacity:1;transform:translateX(-50%) scale(1)}
+.jk.out{opacity:0;transform:translateX(-50%) scale(1.03)}
+/* right rail */
+.hero{grid-template-columns:minmax(260px,.9fr) minmax(0,1.2fr) minmax(220px,360px)}
+.hr{align-items:flex-end;justify-content:flex-start;padding-top:0}
+.hr>div:not(.soc){margin:auto 0}
+.nx{gap:14px;margin-bottom:22px}
+.nxc{--ch:0;width:clamp(120px,10.5vw,168px);aspect-ratio:3/4.4;clip-path:none;border-radius:6px;overflow:hidden;background:rgba(214,228,238,.9);box-shadow:0 14px 34px rgba(30,50,70,.22)}
+.nxc:nth-child(2){margin-right:-34px}
+.nxc img{object-fit:cover;object-position:50% 6%;transform:scale(1.75);transform-origin:50% 12%}
+.nxc span{left:8px;bottom:8px;border-radius:2px}
+.cnt{font-size:10px;text-shadow:0 1px 10px rgba(40,60,80,.55)}
+.soc{display:flex;gap:10px;margin-top:auto}
+.soc a{width:24px;height:24px;display:grid;place-items:center;background:rgba(243,248,252,.92);color:var(--steel);border-radius:3px;transition:background .2s,transform .2s}
+.soc a:hover{background:#fff;transform:translateY(-2px)}.soc svg{width:14px;height:14px}
+@media(max-width:860px){
+ body[data-page=home] .frame{background:linear-gradient(#6a8399,#8aa2b4 45%,#6a8399)}
+ .stage{grid-column:auto;position:relative;left:auto;transform:none;width:100%;height:66vh;order:2;flex:none}
+ .jk{height:140%;top:0}
+ .hz.sp{left:0;right:0;top:20%;height:46%}
+ .hl h1{font-size:56px}.hl{gap:26px}
+ .hr>div:not(.soc){margin:0}.nxc{width:30%}.nxc:nth-child(2){margin-right:0}.soc{margin-top:16px}
+}
+
+/* ===== Arctic 01 hero v2 — reference layout: big cut-out jacket in front of a soft graffiti wall ===== */
+body[data-page=home] .frame{background:
+ radial-gradient(38% 70% at 52% 46%,rgba(176,198,214,.55) 0%,rgba(120,146,166,.25) 55%,transparent 100%),
+ linear-gradient(100deg,#4a6077 0%,#6a8296 32%,#7a92a5 55%,#566d83 100%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 55%,rgba(24,40,58,.38) 100%)}
+/* soft graffiti BEHIND the jacket */
+.hz.sp{left:18%;right:12%;top:4%;height:82%;z-index:0;opacity:.34;transform:none;mix-blend-mode:normal}
+.hz.sp svg{width:100%;height:100%}
+.stage{z-index:1;width:min(54vw,780px)}
+.jk{top:6%;height:148%;max-width:none;-webkit-mask-image:none;mask-image:none;filter:drop-shadow(0 30px 40px rgba(14,28,44,.45)) saturate(.95) contrast(1.04);transform:translateX(-50%)}
+.jk.in{opacity:1;transform:translateX(-50%) scale(1)}
+.jk.out{opacity:0;transform:translateX(-50%) scale(1.03)}
+.hero > .hl{z-index:3}
+/* colour row: dots + name, like the reference spec block */
+.spec dd .cname{margin-left:6px;font-size:10px;letter-spacing:.1em;color:#fff;border-bottom:1px solid #fff;padding-bottom:1px;text-transform:uppercase}
+.spec{gap:16px}
+.spec dd button[aria-pressed=true]{border-bottom:0}
+/* right rail thumbnails: chamfered frames */
+.nxc{--ch:18px;border-radius:0;box-shadow:none;clip-path:polygon(0 0,calc(100% - var(--ch)) 0,100% var(--ch),100% 100%,var(--ch) 100%,0 calc(100% - var(--ch)));background:rgba(188,206,220,.92)}
+.nxc img{object-position:50% 8%;transform:scale(1.9);transform-origin:50% 14%}
+.nxc:hover{transform:translateY(-6px)}
+.cnt{gap:14px}.cnt i{width:110px;background:rgba(255,255,255,.35)}.cnt u{height:2px;top:-.5px}
+.hl h1{font-size:clamp(46px,5.9vw,104px)}
+@media(max-width:860px){.stage{width:100%}.jk{height:118%;top:2%}.hz.sp{left:0;right:0;top:12%;height:50%}}
+
+/* ===== Arctic 01 hero v4 — dark steel-blue field, cut-out model, spray wall, glass rail ===== */
+body[data-page=home] .frame{background:linear-gradient(180deg,#2b3d50 0%,#3d5368 34%,#30455b 66%,#243649 100%)}
+/* header floats over the hero and frosts only after scrolling */
+body[data-page=home] header.top{margin-bottom:calc(var(--hh,62px)*-1)}
+body[data-page=home] header.top::before{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;transition:background .35s,backdrop-filter .35s}
+body[data-page=home] header.top.stuck::before{background:rgba(30,46,62,.62);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+body[data-page=home] .acct .cart{position:relative;width:30px;height:30px;justify-content:center;background:#eef4f9;color:var(--ink)!important;border-radius:8px;transition:background .2s,transform .2s}
+body[data-page=home] .acct .cart:hover{background:#fff;transform:translateY(-2px)}
+body[data-page=home] .acct .cart b{position:absolute;top:-7px;right:-7px;min-width:17px;height:17px;padding:0 4px;font-size:9px;border-radius:9px;background:#0e1c29;color:#fff}
+body[data-page=home] .acct .cart b[data-n="0"]{display:none}
+/* scene */
+.hero{height:max(640px,100dvh);padding-top:calc(var(--hh,62px) + clamp(10px,3vh,36px));
+ background:radial-gradient(46% 62% at 50% 44%,rgba(168,192,212,.5) 0%,rgba(110,138,162,.22) 52%,transparent 100%)}
+.hero::after{background:radial-gradient(115% 88% at 50% 42%,transparent 50%,rgba(10,20,32,.62) 100%)}
+.hz.sp{left:12%;right:8%;top:2%;height:86%;opacity:.55;z-index:0}
+.hl{padding-top:clamp(36px,10vh,110px)}
+.hr>.mono{display:none}
+/* cut-out model */
+.stage{width:min(66vw,960px)}
+.jk{top:-3%;height:104%;width:auto;aspect-ratio:992/1079;max-width:none;mix-blend-mode:normal;
+ filter:drop-shadow(0 34px 46px rgba(6,14,24,.6)) saturate(1.06) contrast(1.05);
+ -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%)}
+/* spec block like the reference */
+.spec dd button:not(.dotc)[aria-pressed=true]::before,.spec dd button:not(.dotc)[aria-pressed=true]::after{content:none}
+.spec dd button:not(.dotc)[aria-pressed=true]{color:#fff;border-bottom:1px solid #fff;padding-bottom:2px}
+.spec dd button:not(.dotc){padding-bottom:2px;border-bottom:1px solid transparent;transition:color .2s}
+.buy .price{font-family:var(--f2);font-weight:500;letter-spacing:.01em;font-size:clamp(20px,2vw,28px)}
+/* right rail: frosted panel that bleeds off the screen edge */
+.nx{margin-right:calc(var(--px)*-1);padding:12px 0 12px 12px;gap:12px;background:rgba(206,224,238,.16);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:inset 1px 0 0 rgba(255,255,255,.2),inset 0 1px 0 rgba(255,255,255,.2),inset 0 -1px 0 rgba(255,255,255,.12);clip-path:polygon(18px 0,100% 0,100% 100%,0 100%,0 18px)}
+.nxc{width:clamp(110px,10vw,150px);aspect-ratio:3/4}
+.nxc:nth-child(2){margin-right:-44px}
+.nxc img{width:100%;height:100%;object-fit:cover;object-position:50% 16%;transform:none;transform-origin:50% 50%;filter:saturate(.92)}
+.nxc:hover img{transform:scale(1.05)}
+@media(max-width:860px){
+ .hero{height:auto;min-height:100dvh}
+ .stage{width:100%;height:62vh}
+ .jk{top:0;height:100%}
+ .hl{padding-top:clamp(28px,6vh,60px)}
+ .nx{margin-right:0;padding:10px;clip-path:none}.nxc{width:30%}.nxc:nth-child(2){margin-right:0}
+}
